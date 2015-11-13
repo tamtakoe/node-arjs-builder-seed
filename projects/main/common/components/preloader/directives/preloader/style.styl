@@ -1,0 +1,31 @@
+preloader($size)
+  width $size px
+  height $size px
+  background-size cover
+  background-position center
+  background-repeat no-repeat
+
+  if $size > 16
+    background-image url('/main/common/components/preloader/assets/images/preloader_black-128.gif')
+  else
+    background-image url('/main/common/components/preloader/assets/images/preloader_black-16.gif')
+
+.preloader
+  display block
+  position relative
+
+  &_left
+    margin-right auto
+
+  &_center
+    margin-left auto
+    margin-right auto
+
+  &_right
+    margin-left auto
+
+  &_size_16
+    preloader 16
+
+  &_size_32
+    preloader 32

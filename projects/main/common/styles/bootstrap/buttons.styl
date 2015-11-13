@@ -1,0 +1,46 @@
+$pseudolink-color ?= $brand-primary
+$pseudolink-hover-color ?= darken($link-color, 15%)
+$btn-pseudolink-disabled-color ?= $gray-light
+
+.btn.btn-pseudolink
+  border-bottom-color $pseudolink-color
+  padding: 0
+  margin: 6px 12px
+
+  &:focus
+    outline none
+
+.btn-pseudolink
+  color $pseudolink-color
+  font-weight normal
+  cursor pointer
+  border-radius 0
+  border-bottom-style dashed
+  border-bottom-width 1px
+
+  &,
+  &:active,
+  &[disabled],
+  fieldset[disabled] &
+    background-color transparent
+    box-shadow none
+
+  &,
+  &:hover,
+  &:focus,
+  &:active
+    border-bottom-color #428bca
+
+  &:hover,
+  &:focus
+    color $pseudolink-hover-color
+    border-bottom-color $pseudolink-hover-color
+    background-color transparent
+
+  &[disabled],
+  fieldset[disabled] &
+    &:hover,
+    &:focus
+      color $btn-pseudolink-disabled-color
+      border-bottom-color $btn-pseudolink-disabled-color
+      text-decoration none

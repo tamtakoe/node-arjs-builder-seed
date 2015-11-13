@@ -1,0 +1,88 @@
+useIfNoEnv: true
+
+localhost:
+  manifest:
+    resources:
+      js:
+        - 'src': 'vendor/requirejs/require.js'
+          'data-main': 'old-browser/requireconfig'
+      css:
+        - 'compiled/old-browser/vendor/bootstrap.css'
+        - 'compiled/old-browser/style.css'
+
+build:
+  system: 'amd'
+  order:
+    - 'vendor'
+    - '*'
+
+  assets:
+    hosts:
+      - ''
+    inlineImg: false
+
+  modules:
+    vendor:
+      includeCss: false
+      scripts:
+        - 'vendor/requirejs/require.js'
+      styles:
+        - 'compiled/old-browser/vendor/bootstrap.css'
+      html:
+        - 'old-browser/template.html'
+      uglifyJs:
+        mangle: false
+      
+vendor:
+  bootstrap:
+    includeCss: false
+    rev: false
+    root: 'vendor/bootstrap/less'
+    styles:
+      - 'variables.less'
+      - 'mixins.less'
+      # Reset
+      - 'normalize.less'
+      - 'print.less'
+
+      # Core CSS
+      - 'scaffolding.less'
+      - 'utilities.less'
+      - 'type.less'
+      - 'code.less'
+      - 'grid.less'
+      - 'tables.less'
+      - 'forms.less'
+      - 'buttons.less'
+
+      # Components
+      - 'component-animations.less'
+      - 'dropdowns.less'
+      - 'button-groups.less'
+      - 'input-groups.less'
+      - 'navs.less'
+      - 'navbar.less'
+      - 'breadcrumbs.less'
+      #- 'pagination.less'
+      #- 'pager.less'
+      - 'labels.less'
+      #- 'badges.less'
+      - 'jumbotron.less'
+      - 'thumbnails.less'
+      - 'alerts.less'
+      #- 'progress-bars.less'
+      - 'media.less'
+      - 'list-group.less'
+      - 'panels.less'
+      #- 'responsive-embed.less'
+      #- 'wells.less'
+      - 'close.less'
+
+      # Components w/ JavaScript
+      - 'modals.less'
+      - 'tooltip.less'
+      #- 'popovers.less'
+      - 'carousel.less'
+
+      # Utility classes
+      - 'responsive-utilities.less'

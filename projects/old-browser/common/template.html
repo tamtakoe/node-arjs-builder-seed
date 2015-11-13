@@ -1,0 +1,16 @@
+<div class="container oldBrowsers">
+    <div class="jumbotron">
+        <h1>{{title}}</h1>
+        <br/>
+        <p>{{downloadAndInstall}} {{lastBrowserVersion}}</p>
+        <p><a class="btn btn-primary btn-lg" href="{{mainBrowser.url}}">
+            {{goToSite}} {{mainBrowser.name}}
+        </a></p>
+        <br/>
+        <p>{{otherPopularBrowser}}</p>
+        <div class="oldBrowsers-browsers-list">{{#otherBrowsers}}<a href="{{url}}">{{name}}</a> {{/otherBrowsers}}</div>
+        <br/>
+        <br/>
+        <p><a href="{{compatibleUrl}}" onclick="window.location.reload();">{{goToSiteForcibly}}</a></p>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+{
+  "name": "demo",
+  "private": true,
+  "dependencies": {
+    "requirejs": "2.1.19",
+    "bootstrap": "3.3.5",
+    "angular": "1.4.4",
+    "angular-i18n": "1.4.4",
+    "angular-resource": "1.4.4",
+    "angular-sanitize": "1.4.4",
+    "angular-animate": "1.4.4",
+    "angular-ui-router": "0.2.15",
+    "angular-bootstrap": "0.13.3",
+    "angular-bootstrap-src": "https://github.com/angular-ui/bootstrap.git#0.13.3",
+    "angular-strap": "https://github.com/grushikhin/angular-strap.git#07d6dfed91352d07f380558560bce8e563638b73",
+    "oi.select": "0.2.17",
+    "jquery": "~2.1.4",
+    "lodash": "3.10.0",
+    "angular-ui-mask": "angular-ui-utils#mask-0.2.2",
+    "moment": "~2.8.3",
+    "ya-map": "https://github.com/tulov/angular-yandex-map.git#1.0.9",
+    "angular-recursion": "1.0.5",
+    "js-xlsx": "0.8.0",
+    "ng-file-upload": "8.0.5",
+    "command-queue": "0.0.1",
+    "angular-mask": "https://github.com/tamtakoe/ngMask.git#master"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.4.4"
+  },
+  "resolutions": {
+    "angular": "~1.4.4"
+  }
+}

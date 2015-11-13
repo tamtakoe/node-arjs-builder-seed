@@ -1,0 +1,31 @@
+$flashMessage-color = #fff;
+$animation-time = 0.5s
+
+.app-flashMessage
+  font-weight 300
+  font-family $common-font-family
+  opacity 1
+
+  &.ng
+    &-hide
+      opacity 0
+
+      &-add
+        transition opacity $animation-time
+        display block !important
+
+      &-remove
+        transition opacity $animation-time ease-in-out
+        display block !important
+
+  a
+    color $flashMessage-color
+
+    &:hover
+      color $flashMessage-color
+
+  button
+    font-weight bold
+
+  &-description
+    font-weight 400

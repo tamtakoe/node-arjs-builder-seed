@@ -1,0 +1,9 @@
+<app-top-notification class="clearfix"></app-top-notification>
+<app-top-banner class="clearfix"></app-top-banner>
+<app-header></app-header>
+<app-header-menu></app-header-menu>
+<div ui-view="main" id="main" autoscroll="false"></div>
+<div class="hidden-print" ng-hide="stateData.hiddenFooter">
+    <app-news-and-terminals class="clearfix"></app-news-and-terminals>
+    <app-footer class="clearfix"></app-footer>
+</div>

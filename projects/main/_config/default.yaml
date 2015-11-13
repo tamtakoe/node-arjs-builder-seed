@@ -1,0 +1,213 @@
+public:
+  resources:
+    api:
+      host:    'https://test.ru/api/v1'
+      info:    'https://test.ru/api/version'
+
+  meta:
+    - url: '/*all'
+      meta:
+        - name: yandex-verification
+          content: 4cce362786d03368
+    - url: '/not-found'
+      meta:
+        - name: prerender-status-code
+          content: 404
+
+localhost:
+  webserver:
+    - port: 7000
+      livereload: true
+    - port: 7100
+    - root: 'build'
+      port: 7200
+      livereload: true
+
+  manifest:
+    browsers:
+      - "chrome >= 30"
+      - "ff >= 20"
+      - "safari >= 7"
+      - "ie >= 10"
+      - "opera >= 12.10"
+      - "android >= 4.4"
+      - "ios >= 7"
+      - "phantomjs >= 1.9"
+
+    resources:
+      js:
+        - 'src': 'vendor/requirejs/require.js'
+          'data-main': 'main/requireconfig'
+      css:
+        - '//fonts.googleapis.com/css?family=Open+Sans:300italic,300,700,600,400&subset=cyrillic-ext,latin-ext'
+        - 'compiled/main/vendor/angularBootstrap.css'
+        - 'vendor/oi.select/dist/select.css'
+        - 'compiled/main/style.css'
+
+build:
+  copy:
+    'robots.txt': 'robots.txt'
+
+  manifest:
+    browsers:
+      - "chrome >= 30"
+      - "ff >= 20"
+      - "safari >= 7"
+      - "ie >= 10"
+      - "opera >= 12.10"
+      - "android >= 4.4"
+      - "ios >= 7"
+      - "phantomjs >= 1.9"
+
+    resources:
+      css:
+        - '//fonts.googleapis.com/css?family=Open+Sans:300italic,300,700,600,400&subset=cyrillic-ext,latin-ext'
+      html:
+        - 'main/common/directives/header/template.html'
+        - 'main/common/directives/headerMenu/template.html'
+
+  styles:
+    - 'main/import.styl'
+
+  autoprefixer: true
+  inlineImgToCss: true
+
+  modules:
+    vendor:
+      includeCss: false
+      scripts:
+        - 'vendor/requirejs/require.js'
+      styles:
+        - 'compiled/main/vendor/angularBootstrap.css'
+        - 'vendor/oi.select/dist/select.css'
+
+      uglifyJs:
+        mangle: false
+    common:
+      sortIndex: 1
+      includeCss: false
+
+vendor:
+  angularStrap:
+    rev: false
+    templateCacheModule: 'angularStrap'
+    root: 'vendor/angular-strap/src'
+    annotate:
+      createMainModule: 'angularStrap'
+      add: true
+      rename:
+        - from: '$tooltip'
+          to: '$asTooltip'
+    scripts:
+      - 'helpers/date-parser.js'
+      - 'helpers/date-formatter.js'
+      - 'helpers/dimensions.js'
+      - 'tooltip/tooltip.js'
+      - 'datepicker/datepicker.js'
+    templates:
+      - 'tooltip/tooltip.tpl.html'
+      - 'datepicker/datepicker.tpl.html'
+
+  angularBootstrap:
+    includeCss: false
+    rev: false
+    templateCacheModule: 'uiBootstrap'
+    root: 'vendor/angular-bootstrap-src'
+    annotate:
+      createMainModule: 'uiBootstrap'
+    scripts:
+      - 'src/accordion/accordion.js'
+      #- 'src/alert/alert.js'
+      - 'src/bindHtml/bindHtml.js'
+      - 'src/buttons/buttons.js'
+      - 'src/carousel/carousel.js'
+      - 'src/collapse/collapse.js'
+      #- 'src/dateparser/dateparser.js'
+      #- 'src/datepicker/datepicker.js'
+      - 'src/dropdown/dropdown.js'
+      - 'src/modal/modal.js'
+      - 'src/pagination/pagination.js'
+      - 'src/popover/popover.js'
+      - 'src/position/position.js'
+      #- 'src/progressbar/progressbar.js'
+      #- 'src/rating/rating.js'
+      - 'src/tabs/tabs.js'
+      #- 'src/timepicker/timepicker.js'
+      - 'src/tooltip/tooltip.js'
+      - 'src/transition/transition.js'
+      #- 'src/typeahead/typeahead.js'
+    templates:
+      - 'template/accordion/accordion.html'
+      - 'template/accordion/accordion-group.html'
+      #- 'template/alert/alert.html'
+      - 'template/carousel/carousel.html'
+      - 'template/carousel/slide.html'
+      #- 'template/datepicker/datepicker.html'
+      #- 'template/datepicker/day.html'
+      #- 'template/datepicker/month.html'
+      #- 'template/datepicker/popup.html'
+      #- 'template/datepicker/year.html'
+      - 'template/modal/backdrop.html'
+      - 'template/modal/window.html'
+      - 'template/pagination/pagination.html'
+      - 'template/pagination/pager.html'
+      - 'template/popover/popover.html'
+      #- 'template/progressbar/progressbar.html'
+      #- 'template/progressbar/progress.html'
+      #- 'template/progressbar/bar.html'
+      #- 'template/rating/rating.html'
+      - 'template/tabs/tab.html'
+      - 'template/tabs/tabset.html'
+      #- 'template/timepicker/timepicker.html'
+      - 'template/tooltip/tooltip-html-unsafe-popup.html'
+      - 'template/tooltip/tooltip-popup.html'
+      #- 'template/typeahead/typeahead-match.html'
+      #- 'template/typeahead/typeahead-popup.html'
+    styles:
+      - '../../vendor/bootstrap/less/variables.less'
+      - '../../vendor/bootstrap/less/mixins.less'
+      # Reset
+      - '../../vendor/bootstrap/less/normalize.less'
+      - '../../vendor/bootstrap/less/print.less'
+
+      # Core CSS
+      - '../../vendor/bootstrap/less/scaffolding.less'
+      - '../../vendor/bootstrap/less/utilities.less'
+      - '../../vendor/bootstrap/less/type.less'
+      - '../../vendor/bootstrap/less/code.less'
+      - '../../vendor/bootstrap/less/grid.less'
+      - '../../vendor/bootstrap/less/tables.less'
+      - '../../vendor/bootstrap/less/forms.less'
+      - '../../vendor/bootstrap/less/buttons.less'
+
+      # Components
+      - '../../vendor/bootstrap/less/component-animations.less'
+      - '../../vendor/bootstrap/less/dropdowns.less'
+      - '../../vendor/bootstrap/less/button-groups.less'
+      - '../../vendor/bootstrap/less/input-groups.less'
+      - '../../vendor/bootstrap/less/navs.less'
+      - '../../vendor/bootstrap/less/navbar.less'
+      - '../../vendor/bootstrap/less/breadcrumbs.less'
+      #- '../../vendor/bootstrap/less/pagination.less'
+      #- '../../vendor/bootstrap/less/pager.less'
+      - '../../vendor/bootstrap/less/labels.less'
+      #- '../../vendor/bootstrap/less/badges.less'
+      #- '../../vendor/bootstrap/less/jumbotron.less'
+      - '../../vendor/bootstrap/less/thumbnails.less'
+      - '../../vendor/bootstrap/less/alerts.less'
+      #- '../../vendor/bootstrap/less/progress-bars.less'
+      - '../../vendor/bootstrap/less/media.less'
+      - '../../vendor/bootstrap/less/list-group.less'
+      - '../../vendor/bootstrap/less/panels.less'
+      #- '../../vendor/bootstrap/less/responsive-embed.less'
+      #- '../../vendor/bootstrap/less/wells.less'
+      - '../../vendor/bootstrap/less/close.less'
+
+      # Components w/ JavaScript
+      - '../../vendor/bootstrap/less/modals.less'
+      - '../../vendor/bootstrap/less/tooltip.less'
+      #- '../../vendor/bootstrap/less/popovers.less'
+      - '../../vendor/bootstrap/less/carousel.less'
+
+      # Utility classes
+      - '../../vendor/bootstrap/less/responsive-utilities.less'

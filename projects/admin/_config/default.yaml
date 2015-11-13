@@ -1,0 +1,30 @@
+inherit: main
+
+localhost:
+  webserver:
+    root: 'build'
+    proxies: true
+    port: 7201
+    livereload: true
+
+  manifest:
+    resources:
+      js:
+        - 'src': 'vendor/requirejs/require.js'
+          'data-main': 'admin/requireconfig'
+      css:
+        - 'compiled/admin/vendor/angularBootstrap.css'
+        - 'compiled/admin/style.css'
+      html: []
+      iframe: []
+
+build:
+  index: 'external'
+
+vendor:
+  xlsxAmd:
+    rev: false
+    root: 'vendor/js-xlsx/dist'
+    wrapScript: 'define(["JSZip"], function(JSZip) {<%= contents %> window.XLSX = XLSX; return XLSX;})'
+    scripts:
+      - 'xlsx.js'
