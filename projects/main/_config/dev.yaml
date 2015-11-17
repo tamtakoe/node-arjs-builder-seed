@@ -1,14 +1,5 @@
 public:
   resources:
-    apiData:
-      host:     '//dev.test.ru/api-data'
-      version:  1
     api:
-      host:     '//dev.test.ru/api/v1'
-      info:     '//dev.test.ru/api/version'
-      login:    'dev.test.ru'
-      password: 'mr5cno4wj81o7z5'
-    oauth:
-      host:     '//dev.test.ru/oauth'
-  redirects:
-    /example: '/example-redirect'
+      host: '//api.github.com'
+      info: '//api.github.com/version'

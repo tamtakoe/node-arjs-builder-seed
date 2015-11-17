@@ -1,18 +1,15 @@
 public:
   resources:
     api:
-      host:    'https://test.ru/api/v1'
-      info:    'https://test.ru/api/version'
+      host: '//api.github.com'
+      info: '//api.github.com/version'
 
   meta:
     - url: '/*all'
+      title: 'Main Page'
       meta:
-        - name: yandex-verification
-          content: 4cce362786d03368
-    - url: '/not-found'
-      meta:
-        - name: prerender-status-code
-          content: 404
+        - name: google-site-verification
+          content: SgJcQu3tL07cGulPlL3GFU-PUua4LqQnwJsFQxF_8Fc
 
 localhost:
   webserver:
@@ -24,16 +21,6 @@ localhost:
       livereload: true
 
   manifest:
-    browsers:
-      - "chrome >= 30"
-      - "ff >= 20"
-      - "safari >= 7"
-      - "ie >= 10"
-      - "opera >= 12.10"
-      - "android >= 4.4"
-      - "ios >= 7"
-      - "phantomjs >= 1.9"
-
     resources:
       js:
         - 'src': 'vendor/requirejs/require.js'
@@ -41,7 +28,6 @@ localhost:
       css:
         - '//fonts.googleapis.com/css?family=Open+Sans:300italic,300,700,600,400&subset=cyrillic-ext,latin-ext'
         - 'compiled/main/vendor/angularBootstrap.css'
-        - 'vendor/oi.select/dist/select.css'
         - 'compiled/main/style.css'
 
 build:
@@ -49,22 +35,11 @@ build:
     'robots.txt': 'robots.txt'
 
   manifest:
-    browsers:
-      - "chrome >= 30"
-      - "ff >= 20"
-      - "safari >= 7"
-      - "ie >= 10"
-      - "opera >= 12.10"
-      - "android >= 4.4"
-      - "ios >= 7"
-      - "phantomjs >= 1.9"
-
     resources:
       css:
         - '//fonts.googleapis.com/css?family=Open+Sans:300italic,300,700,600,400&subset=cyrillic-ext,latin-ext'
       html:
-        - 'main/common/directives/header/template.html'
-        - 'main/common/directives/headerMenu/template.html'
+        - 'main/common/views/body/template.html'
 
   styles:
     - 'main/import.styl'

@@ -100,7 +100,6 @@ define([
             }
         }
 
-        //TODO для перебора свойств объектов использовать везде одно и то же (сейчас где-то angular.forEach, _.forOwn, for-in)
         function setInterpolationFunctions(src, dest) {
             angular.forEach(src, function(value, key) {
                 if (key === 'meta') {
@@ -137,7 +136,6 @@ define([
             });
         }
 
-        // todo: проверка [0] !== $ как-то костыль напоминает. подумать
         function clear(obj) {
             for (var key in obj) {
                 if (obj.hasOwnProperty(key) && key[0] !== '$') {

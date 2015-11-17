@@ -1,0 +1,16 @@
+<div class="container homepage">
+    <app-homepage-header></app-homepage-header>
+
+    <div class="thumbnail homepage-user"
+         ng-repeat="user in users">
+        <img ng-src="{{user.avatar_url}}">
+        <div class="caption">
+            <a ng-href="{{user.html_url}}"><h3>{{user.login}}</h3></a>
+        </div>
+    </div>
+
+    <div class="alert alert-danger"
+         ng-if="error">
+        <strong>{{error.statusText}}:</strong> {{error.message}}
+    </div>
+</div>

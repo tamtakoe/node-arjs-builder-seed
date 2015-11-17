@@ -1,22 +1,19 @@
 define([
 
-    'app',
-
-    'main/common/services/api/interceptor',
-    'main/common/services/api/transformResponse'
+    'app'
 
 ], function(app) {
     "use strict";
 
     app.factory('apiResource', function($resource, ApiResourceInterceptor, apiResourceTransformResponse, config) {
         var DEFAULT_ACTIONS = {
-            get: { method: 'GET' },
-            save: { method: 'PATCH', accessToken: true }, // todo: create or update
-            query: { method: 'GET', isArray: true },
+            get:    { method: 'GET' },
+            save:   { method: 'PATCH',  accessToken: true },
+            query:  { method: 'GET',    isArray: true },
             remove: { method: 'DELETE', accessToken: true },
             delete: { method: 'DELETE', accessToken: true },
-            create: { method: 'POST', accessToken: true },
-            patch: { method: 'PATCH', accessToken: true }
+            create: { method: 'POST',   accessToken: true },
+            patch:  { method: 'PATCH',  accessToken: true }
         };
 
         function apiResource(url, paramDefaults, actions) {

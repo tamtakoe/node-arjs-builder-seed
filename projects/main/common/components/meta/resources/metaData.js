@@ -1,15 +1,13 @@
 define([
 
-    'app',
-
-    'main/common/services/api/resource'
+    'app'
 
 ], function(app) {
     'use strict';
 
     app.factory('MetaData', function(apiResource, metaDataResourceInterceptor, extendMeta) {
 
-        var MetaData = apiResource('metadata/:id', {id: '@id', limit: 1000}, {
+        var MetaData = apiResource('metadata/:id', {id: '@id'}, {
             get: {method: 'GET'},
             query: {method: 'GET', isArray: true},
             queryExtendedFormat: {method: 'GET', isArray: true, interceptor: metaDataResourceInterceptor, cache: true}
@@ -47,5 +45,4 @@ define([
 
         return MetaData;
     });
-
 });

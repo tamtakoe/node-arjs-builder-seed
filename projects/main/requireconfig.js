@@ -11,11 +11,8 @@ require.config({
         angularLocale: 'vendor/angular-i18n/angular-locale_ru',
         angularResource: 'vendor/angular-resource/angular-resource',
         uiRouter: 'vendor/angular-ui-router/release/angular-ui-router',
-
         angularBootstrap: 'compiled/main/vendor/angularBootstrap',
-        angularStrap: 'compiled/main/vendor/angularStrap',
-
-        commandQueue: 'vendor/command-queue/command-queue'
+        angularStrap: 'compiled/main/vendor/angularStrap'
     },
     shim: {
         angular: {
@@ -24,7 +21,6 @@ require.config({
         angularLocale: ['angular'],
         angularResource: ['angular'],
         uiRouter: ['angular'],
-
         angularBootstrap: ['angular'],
         angularStrap: ['angular']
     },

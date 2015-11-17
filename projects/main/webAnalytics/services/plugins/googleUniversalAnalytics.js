@@ -15,13 +15,13 @@ define([
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
         //Google remarketing. Realy!???
-        window.google_conversion_id = 962147747;
+        window.google_conversion_id = 123456789;
         window.google_custom_params = window.google_tag_params;
         window.google_remarketing_only = true;
 
-        ga('create', 'UA-59777548-1');
-        ga('require', 'displayfeatures'); // функции для рекламодателей
-        ga('require', 'ec'); // функции для рекламодателей
+        ga('create', 'UA-12345678-1');
+        ga('require', 'displayfeatures');
+        ga('require', 'ec');
     } else {
         window.ga = angular.noop;
     }

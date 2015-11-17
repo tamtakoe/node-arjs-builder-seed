@@ -6,8 +6,6 @@ define([
     'main/common/components/meta/services/currentMeta',
     'main/common/components/meta/services/metaDataResourceInterceptor',
 
-    'main/common/components/meta/filters/random',
-
     'main/common/components/meta/resources/metaData'
 
 ], function(app) {

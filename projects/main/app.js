@@ -4,11 +4,8 @@ define([
     'angularLocale',
     'angularResource',
     'uiRouter',
-
     'angularBootstrap',
-    'angularStrap',
-
-    'commandQueue'
+    'angularStrap'
 
 ], function(angular) {
     'use strict';

@@ -3,27 +3,14 @@ define([
     'app',
 
     'main/common/components/flashMessage/config',
-    'main/common/components/preloader/config',
     'main/common/components/meta/config',
     'main/common/components/meta/resources/metaData',
-    'main/common/components/prerender/config',
-
-    'main/common/directives/headerMenu/directive',
 
     'main/common/services/router/expandView',
     'main/common/services/api/resource',
     'main/common/services/api/interceptor',
-    'main/common/services/api/UTCInterceptor',
     'main/common/services/api/transformResponse',
-    'main/common/services/router/stateDataGetters/provider',
-    'main/common/services/router/stateDataGetters/stateData',
     'main/common/services/config',
-
-    'main/common/resources/news',
-
-    'main/common/filters/nl2br',
-    'main/common/filters/stripTags',
-    'main/common/filters/toFixedNumber',
 
     'main/common/views/body/controller'
 
@@ -35,14 +22,13 @@ define([
         $locationProvider.hashPrefix('!');
     });
 
-
     app.config(function($urlRouterProvider, config) {
         angular.forEach(config.redirects, function(value, key) {
             $urlRouterProvider.when(key, value);
         });
 
         $urlRouterProvider.otherwise(function($injector) {
-            //go to not found page
+            console.log('Not Found Page');
         });
 
         $urlRouterProvider.rule(function($injector, $location) {
@@ -60,14 +46,6 @@ define([
     //disable strip trailing slashes
     app.config(function($resourceProvider) {
         $resourceProvider.defaults.stripTrailingSlashes = false;
-    });
-
-    // State data getters
-    app.config(function(routerStateDataGettersProvider) {
-        routerStateDataGettersProvider.decorateState();
-    });
-    app.run(function(routerStateDataGetters) {
-        routerStateDataGetters.addGetDataOnRouteHandler();
     });
 
     app.config(function($stateProvider, expandViewProvider) {

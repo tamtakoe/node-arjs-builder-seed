@@ -6,7 +6,6 @@ define([
 
     'main/webAnalytics/services/webAnalytics',
 
-    'main/webAnalytics/services/plugins/yandexMetrika',
     'main/webAnalytics/services/plugins/googleUniversalAnalytics'
 
 ], function(app) {

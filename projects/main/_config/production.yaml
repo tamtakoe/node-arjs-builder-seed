@@ -1,0 +1,36 @@
+public:
+  resources:
+    api:
+      host: '//api.github.com'
+      info: '//api.github.com/version'
+
+  analytics:
+    google: true
+
+  redirects:
+    /example: '/example-redirect'
+
+build:
+  uglifyJs: true
+  minifyHtml: true
+  minifyCss: true
+  inlineImgToCss: true
+
+  modules:
+    vendor:
+      minifyHtml: true
+      minifyCss: true
+      uglifyJs:
+        mangle: false
+    common:
+      minifyHtml: true
+      minifyCss: true
+      uglifyJs: true
+
+  manifest:
+    resources:
+      js:
+        - 'src': 'https://ssljscdn.airbrake.io/airbrake-js-tracekit.min.js'
+          'data-airbrake-project-id': '116970'
+          'data-airbrake-project-key': '8ea247046ee758b0115bb3e5a0f80574'
+          'data-airbrake-project-environment-name': 'production'

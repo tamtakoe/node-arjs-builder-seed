@@ -1,8 +1,6 @@
 define([
 
-    'app',
-
-    'main/common/components/flashMessage/services/flashMessage'
+    'app'
 
 ], function(app) {
     "use strict";

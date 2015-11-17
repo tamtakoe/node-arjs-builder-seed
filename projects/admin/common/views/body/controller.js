@@ -8,5 +8,4 @@ define([
     app.controller('CommonBody', function($scope) {
 
     });
-
 });

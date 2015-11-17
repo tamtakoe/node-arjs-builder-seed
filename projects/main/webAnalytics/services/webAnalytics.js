@@ -2,11 +2,7 @@ define([
 
     'app',
 
-    'main/webAnalytics/services/plugins/yandexMetrika',
-    'main/webAnalytics/services/plugins/googleUniversalAnalytics',
-    'main/webAnalytics/services/plugins/googleTagManager',
-    'main/webAnalytics/services/plugins/vkontakte',
-    'main/webAnalytics/services/plugins/mailru'
+    'main/webAnalytics/services/plugins/googleUniversalAnalytics'
 
 ], function(app) {
     "use strict";
@@ -21,7 +17,7 @@ define([
         return a.pathname.replace(/\/$/,'');
     }
 
-    app.service('webAnalytics', function(config, yandexMetrika, googleUniversalAnalytics, googleTagManager) {
+    app.service('webAnalytics', function(config, googleUniversalAnalytics) {
         return {
             //routing tracking. F.e. webAnalytics.hit('http://site.com/contacts', 'http://othersite.com')
             hit: function(url, referrer, params) {
@@ -32,18 +28,14 @@ define([
                 } else if ((pathname(url) || pathname(referrer)) && pathname(url) === pathname(referrer)) {
                     return; //ignore query params
                 } else {
-                    gaReferrer = undefined; //for Media Price
+                    gaReferrer = undefined;
                 }
 
-                yandexMetrika.hit(url, referrer, params);
                 googleUniversalAnalytics.hit(url, gaReferrer, params);
-                googleTagManager.hit(url, gaReferrer, params);
             },
             //event tracking. F.e. webAnalytics.track('click', 'article.topBanner'). Label format: 'category.label'
             track: function(eventType, label, params) {
-                yandexMetrika.track(eventType, label, params);
                 googleUniversalAnalytics.track(eventType, label, params);
-                googleTagManager.track(eventType, label, params);
             }
         };
     });

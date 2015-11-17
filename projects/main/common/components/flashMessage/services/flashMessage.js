@@ -8,5 +8,4 @@ define([
     app.service('flashMessage', function() {
         return window.flashMessage;
     });
-
 });

@@ -20,11 +20,3 @@ localhost:
 
 build:
   index: 'external'
-
-vendor:
-  xlsxAmd:
-    rev: false
-    root: 'vendor/js-xlsx/dist'
-    wrapScript: 'define(["JSZip"], function(JSZip) {<%= contents %> window.XLSX = XLSX; return XLSX;})'
-    scripts:
-      - 'xlsx.js'
