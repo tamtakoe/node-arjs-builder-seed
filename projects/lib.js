@@ -8,7 +8,7 @@ var lib = (function() {
         return arguments[0];
     }
 
-    //Browser //TODO Make separate module
+    //Browser
     function Browser(supported, aliases) {
         this.aliases   = aliases   || {firefox: 'ff', explorer: 'ie', edge: 'ie'};
         this.supported = supported || ['chrome >= 35', 'ff >= 20', 'safari >= 7', 'ie >= 10', 'opera >= 12.10', 'android >= 4.4', 'ios >= 7', 'phantomjs >= 1.9'];
@@ -270,18 +270,6 @@ var lib = (function() {
     window.prerenderReady  = false;
     window.projectResolved = false;
     window.project = detectProject(browser);
-    setInternalUse();
-
-    //Internal use
-    function setInternalUse() {
-        if (hash[0] === 'internal') {
-            document.cookie = hash[0] + '=' + hash[1] +';path=/;expires=Sun, 17 Jan 2038 03:14:07 GMT';
-        }
-
-        var internal = document.cookie.match(/internal=(.)/);
-
-        window.project.internalUse = internal && internal[1] === '1';
-    }
 
     //DOM
     function setAttrs(element, attrs) {
