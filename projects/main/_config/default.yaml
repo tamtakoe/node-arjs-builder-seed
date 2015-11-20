@@ -55,7 +55,6 @@ build:
         - 'vendor/requirejs/require.js'
       styles:
         - 'compiled/main/vendor/angularBootstrap.css'
-        - 'vendor/oi.select/dist/select.css'
 
       uglifyJs:
         mangle: false
