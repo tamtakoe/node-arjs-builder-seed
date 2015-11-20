@@ -1,4 +1,4 @@
-# SPA on AngularJS
+# Demo SPA on AngularJS and RequireJS
 
 ## Install
 
@@ -21,6 +21,10 @@
 
     gulp build [--enviroment] [--project]
     gulp build --dev --admin
+    
+## Test
+
+    gulp test
     
 ## Config
 

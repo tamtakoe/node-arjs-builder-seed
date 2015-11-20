@@ -1,10 +1,5 @@
 require.config({
     baseUrl: '/',
-    config: {
-        moment: {
-            noGlobal: false
-        }
-    },
     paths: {
         app: 'main/app',
         angular: 'vendor/angular/angular',
@@ -24,6 +19,5 @@ require.config({
         angularBootstrap: ['angular'],
         angularStrap: ['angular']
     },
-
     deps: ['main/bootstrap']
 });

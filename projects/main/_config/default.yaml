@@ -75,6 +75,7 @@ vendor:
         - from: '$tooltip'
           to: '$asTooltip'
     scripts:
+      - 'helpers/compiler.js'
       - 'helpers/date-parser.js'
       - 'helpers/date-formatter.js'
       - 'helpers/dimensions.js'

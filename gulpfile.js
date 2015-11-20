@@ -4,4 +4,3 @@ var arjs = require('arjs-builder')();
 gulp.task('build', arjs.build);
 gulp.task('test', arjs.test);
 gulp.task('default', arjs.run);
-gulp.task('compileVendor', arjs.compileVendor);
