@@ -5,8 +5,9 @@ public:
       info: '//api.github.com/version'
 
   meta:
-    - url: '/*all'
+    - url: '/'
       title: 'Main Page'
+    - url: '/*all'
       meta:
         - name: google-site-verification
           content: SgJcQu3tL07cGulPlL3GFU-PUua4LqQnwJsFQxF_8Fc
